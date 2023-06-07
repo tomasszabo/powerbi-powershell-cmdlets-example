@@ -75,7 +75,7 @@ $workspaces | ForEach-Object {
 }
 
 # Output result as JSON
-$result | ConvertTo-Json -Depth 10 -EnumsAsStrings
+$result | ConvertTo-Json -Depth 10 
 
 # Disconnect from PowerBI
 Disconnect-PowerBIServiceAccount
