@@ -4,9 +4,9 @@ This script is an example how to retrieve metadata of reports and datasets from 
 
 # Prerequisites
 
-1. PowerShell Core v7.3+
-2. [Azure service principal](#create-azure-ad-service-principal)
-3. [Configured permissions in PowerBI](#configure-permissions-in-powerbi)
+- PowerShell Core v7.3+
+- [Azure AD service principal](#create-azure-ad-service-principal)
+- [Configured permissions in PowerBI](#configure-permissions-in-powerbi)
 
 # Create Azure AD service principal
 
@@ -29,8 +29,9 @@ Now create client secret:
 
 Consider using certificates instead of client secrets for higher security. PowerBI PowerShell script can be adapted to accept certificate instead of client secret.
 
-> **Important**
-> An app using service principal authentication that calls read-only admin APIs must not have any admin-consent required permissions for Power BI set on it in the Azure portal.
+> **Warning**
+>
+> An app using service principal authentication that calls PowerBI read-only admin APIs must not have any admin-consent required permissions for Power BI set on it in the Azure portal. Therefore do not add any API permissions in Azure AD, permissions for service principals are configured in PowerBI.
 
 Now create security group for service principals that will be used to grant access to PowerBI:
 
@@ -45,7 +46,7 @@ Using security group in PowerBI will grant access to PowerBI API only to service
 
 # Configure permissions in PowerBI
 
-1. Sign-in to [PowerBI Admin Portal](https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi)
+1. Sign-in to [PowerBI Admin Portal](https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi).
 2. Select `Tenant settings`.
 3. Search for `Allow service principals to use Power BI APIs` and enable it for security group created in chapter [Create Azure service principal](#create-azure-ad-service-principal). This setting allows service principal in specified security group to access PowerBI API.
 4. Search for `Allow service principals to use read-only admin APIs` and enable it for security group created in chapter [Create Azure service principal](#create-azure-ad-service-principal). This setting allows service principal in specified security group to access PowerBI admin API.
@@ -114,9 +115,11 @@ Output from script is JSON with reports and datasets:
 # Resources
 
 - [Create an Azure Active Directory application and service principal that can access resources](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)
+- [Automate Premium workspace and dataset tasks with service principals](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-service-principal)
 - [Embed Power BI content with service principal and an application secret](https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal#step-3---enable-the-power-bi-service-admin-settings)
 - [Enable service principal authentication for read-only admin APIs](https://learn.microsoft.com/en-us/power-bi/enterprise/read-only-apis-service-principal-authentication)
-
+- [Microsoft Power BI Cmdlets](https://learn.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps)
+- [Using the Power BI REST APIs](https://learn.microsoft.com/en-us/rest/api/power-bi/)
 
 # License
 
