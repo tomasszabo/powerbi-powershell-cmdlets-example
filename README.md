@@ -48,12 +48,12 @@ Using security group in PowerBI will grant access to PowerBI API only to service
 
 1. Sign-in to [PowerBI Admin Portal](https://app.powerbi.com/admin-portal/tenantSettings?experience=power-bi).
 2. Select `Tenant settings`.
-3. Search for `Allow service principals to use Power BI APIs` and enable it for security group created in chapter [Create Azure service principal](#create-azure-ad-service-principal). This setting allows service principal in specified security group to access PowerBI API.
-4. Search for `Allow service principals to use read-only admin APIs` and enable it for security group created in chapter [Create Azure service principal](#create-azure-ad-service-principal). This setting allows service principal in specified security group to access PowerBI admin API.
+3. Search for `Allow service principals to use Power BI APIs` and enable it for security group created in chapter [Create Azure AD service principal](#create-azure-ad-service-principal). This setting allows service principal in specified security group to access PowerBI API.
+4. Search for `Allow service principals to use read-only admin APIs` and enable it for security group created in chapter [Create Azure AD service principal](#create-azure-ad-service-principal). This setting allows service principal in specified security group to access PowerBI admin API.
 
 # Running the script
 
-Run the script in PowerShell with following command:
+Run the [get_reports.ps1](get_reports.ps1) script in PowerShell with following command:
 
 ```bash
 get_reports.ps1 -tenant <TENANT> -applicationId <APP_ID> -secret <PASSWORD>
