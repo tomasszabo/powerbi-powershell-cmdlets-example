@@ -112,6 +112,10 @@ Output from script is JSON with reports and datasets:
 }
 ```
 
+> **Note**
+>
+> Script contains array of workspaces (defined by their names) that should be excluded from processing. Adjust this array according to your needs.
+
 # Resources
 
 - [Create an Azure Active Directory application and service principal that can access resources](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)
