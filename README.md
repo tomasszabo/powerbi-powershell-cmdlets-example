@@ -2,6 +2,13 @@
 
 This script is an example how to retrieve metadata of reports and datasets from all workspaces in PowerBI using [PowerBI Cmdlets](https://learn.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps).
 
+What the script does:
+
+1. Connects to PowerBI using service principal (could be changed to certificate).
+2. Retrieves all workspaces excluding defined workspaces (list of excluded workspaces needs to be adjusted in script).
+3. Retrieves all datasets and reports from workspaces.
+4. Outputs JSON with datasets and reports.
+
 # Prerequisites
 
 - PowerShell Core v7.3+
@@ -114,7 +121,7 @@ Output from script is JSON with reports and datasets:
 
 > **Note**
 >
-> Script contains array of workspaces (defined by their names) that should be excluded from processing. Adjust this array according to your needs.
+> Script contains array of workspaces (defined by their names) that should be excluded from processing. Adjust this array according to your needs or update the script to read excluded workspaces from parameter.
 
 # Resources
 
