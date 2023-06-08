@@ -35,7 +35,7 @@ Connect-PowerBIServiceAccount -Tenant $tenant -ServicePrincipal -Credential $cre
 # Connect-PowerBIServiceAccount -ServicePrincipal -CertificateThumbprint $certificate -ApplicationId $applicationId | Out-Null
 
 # Exlude following workspaces from report retrieval (define if needed otherwise leave empty)
-$excludedWorkspaces = @("Their Workspace", "Other Workspace")
+$excludedWorkspaces = @("Their Workspace2", "Other Workspace2")
 
 # Get workspaces within organisation with related reports and datasets filter out excluded workspaces
 $workspaces = Get-PowerBIWorkspace -Scope Organization -Include Reports, Datasets | Where-Object { $_.Name -notin $excludedWorkspaces }
