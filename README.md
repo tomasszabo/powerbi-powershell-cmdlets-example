@@ -121,7 +121,7 @@ Output from script is JSON with reports and datasets:
 
 > **Note**
 >
-> Script contains array of workspaces (defined by their names) that should be excluded from processing. Adjust this array according to your needs or update the script to read excluded workspaces from parameter.
+> Script contains array of workspaces (defined by their names) that should be excluded from processing. Adjust this array according to your needs or update the script to read excluded workspaces from script's input parameter.
 
 # Resources
 
