@@ -38,7 +38,7 @@ Connect-PowerBIServiceAccount -Tenant $tenant -ServicePrincipal -Credential $cre
 $excludedWorkspaces = @("Their Workspace2", "Other Workspace2")
 
 # Get workspaces within organisation with related reports and datasets filter out excluded workspaces
-$workspaces = Get-PowerBIWorkspace -Scope Organization -Include Reports, Datasets | Where-Object { $_.Name -notin $excludedWorkspaces }
+$workspaces = Get-PowerBIWorkspace -Scope Organization -Include Reports, Datasets -All | Where-Object { $_.Name -notin $excludedWorkspaces }
 
 $result = [PSObject]@{
 	Reports  = New-Object -TypeName System.Collections.Arraylist
